@@ -145,68 +145,42 @@ function TerminalCard() {
   };
   const onLeave = () => setTilt({ x: 0, y: 0 });
 
-  const lines = [
-    { c: "text-[#7B2CBF]", t: "const" },
-    { c: "text-slate-200", t: " developer " },
-    { c: "text-[#00F5D4]", t: "=" },
-    { c: "text-slate-200", t: " {" },
-  ];
-
   return (
     <div
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       style={{ transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)` }}
-      className="relative transition-transform duration-200 ease-out"
+      className="relative transition-transform duration-200 ease-out max-w-sm mx-auto lg:mx-0"
     >
       <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#00F5D4]/25 via-transparent to-[#7B2CBF]/25 blur-2xl" />
       <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.03]">
-          <span className="w-3 h-3 rounded-full bg-red-400/70" />
-          <span className="w-3 h-3 rounded-full bg-yellow-400/70" />
-          <span className="w-3 h-3 rounded-full bg-emerald-400/70" />
-          <span className="ml-3 text-xs text-slate-400 font-mono">khaidar.dev — profile.js</span>
+        <div className="rounded-t-2xl overflow-hidden">
+          <img
+            src={PROFILE_IMG}
+            alt="Khaidar Sinaan As-Shidqii"
+            className="w-full h-72 object-cover object-top"
+          />
         </div>
-
         <div className="p-5">
-          <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
-            <img
-              src={PROFILE_IMG}
-              alt="Khaidar Sinaan As-Shidqii"
-              className="w-full h-64 object-cover object-top"
-            />
+          <h3 className="font-[Space_Grotesk] text-lg text-white leading-tight">Khaidar Sinaan As-Shidqii</h3>
+          <p className="text-sm text-slate-400 mb-4">Aspiring Software Engineer</p>
+
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              <span className="text-xs text-emerald-300">Online</span>
+            </div>
+            <button
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              className="rounded-lg bg-[#00F5D4] text-[#06121A] text-xs font-medium px-3.5 py-2 transition-all hover:shadow-[0_0_20px_rgba(0,245,212,0.5)]"
+            >
+              Contact Me
+            </button>
           </div>
-          <pre className="font-mono text-[13px] leading-relaxed overflow-x-auto">
-            <code>
-              <span className="text-[#7B2CBF]">const</span>
-              <span className="text-slate-300"> developer </span>
-              <span className="text-[#00F5D4]">=</span>
-              <span className="text-slate-300"> {"{"}</span>
-              {"\n"}
-              <span className="text-slate-500">  name:</span>
-              <span className="text-orange-300"> "Khaidar Sinaan As-Shidqii"</span>
-              <span className="text-slate-300">,</span>
-              {"\n"}
-              <span className="text-slate-500">  role:</span>
-              <span className="text-orange-300"> "Aspiring Software Engineer"</span>
-              <span className="text-slate-300">,</span>
-              {"\n"}
-              <span className="text-slate-500">  school:</span>
-              <span className="text-orange-300"> "SMK N 1 Wonosobo"</span>
-              <span className="text-slate-300">,</span>
-              {"\n"}
-              <span className="text-slate-500">  age:</span>
-              <span className="text-[#00F5D4]"> 17</span>
-              <span className="text-slate-300">,</span>
-              {"\n"}
-              <span className="text-slate-500">  learning:</span>
-              <span className="text-slate-300"> {"true"}</span>
-              {"\n"}
-              <span className="text-slate-300">{"}"}</span>
-              <span className="inline-block w-2 h-4 bg-[#00F5D4] ml-1 align-middle animate-pulse" />
-            </code>
-          </pre>
         </div>
       </div>
     </div>
@@ -307,31 +281,55 @@ function StatsBar() {
 /* ---------------- About ---------------- */
 function About() {
   return (
-    <section id="about" className="px-6 py-28">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-start">
+    <section id="about" className="px-6 py-20">
+      <div className="max-w-6xl mx-auto">
         <Reveal>
           <span className="text-[#7B2CBF] text-sm font-mono">01 — About</span>
-          <h2 className="font-[Space_Grotesk] text-3xl sm:text-4xl text-white mt-3 mb-6 leading-tight">
+          <h2 className="font-[Space_Grotesk] text-3xl sm:text-4xl text-white mt-3 mb-10 leading-tight">
             Turning curiosity into working code
           </h2>
         </Reveal>
+
         <Reveal delay={0.1}>
-          <div className="space-y-5 text-slate-400 leading-relaxed text-[15px]">
-            <p>
-              I'm a Software Engineering student at SMK N 1 Wonosobo, drawn to programming because it
-              rewards patience and structured thinking. Every bug is a small puzzle, and every fix
-              teaches me something I didn't know an hour before.
-            </p>
-            <p>
-              I enjoy breaking problems down before writing a single line — mapping the logic first,
-              then building it out with React, Next.js, and Node.js. What keeps me going is the loop
-              of trying, failing, and trying again with a better idea each time.
-            </p>
-            <p>
-              My goal is to grow into a professional software engineer who builds reliable products
-              and keeps learning long after graduation — one project, one framework, one late night
-              at a time.
-            </p>
+          <div className="relative rounded-2xl p-[1px] bg-gradient-to-br from-[#7B2CBF]/60 via-[#7B2CBF]/10 to-[#00F5D4]/40">
+            <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-[#7B2CBF]/20 blur-3xl" />
+            <div className="rounded-2xl bg-[#0B0F19]/90 backdrop-blur-md px-6 py-8 sm:px-10 sm:py-10 grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+              <div>
+                <h3 className="font-[Space_Grotesk] text-xl text-white mb-4">About Me</h3>
+                <div className="space-y-4 text-slate-400 leading-relaxed text-[15px] mb-8">
+                  <p>
+                    I'm a Software Engineering student at SMK N 1 Wonosobo, drawn to programming because it
+                    rewards patience and structured thinking. Every bug is a small puzzle, and every fix
+                    teaches me something I didn't know an hour before.
+                  </p>
+                  <p>
+                    I enjoy breaking problems down before writing a single line — mapping the logic first,
+                    then building it out with React, Next.js, and Node.js. My goal is to grow into a
+                    professional software engineer who keeps learning long after graduation.
+                  </p>
+                </div>
+                <div className="flex gap-10">
+                  <div>
+                    <div className="font-[Space_Grotesk] text-3xl text-white">
+                      3<span className="text-[#00F5D4]">+</span>
+                    </div>
+                    <div className="text-xs text-slate-500 mt-1">Projects Finished</div>
+                  </div>
+                  <div>
+                    <div className="font-[Space_Grotesk] text-3xl text-white">
+                      1<span className="text-[#00F5D4]">+</span>
+                    </div>
+                    <div className="text-xs text-slate-500 mt-1">Years of Learning</div>
+                  </div>
+                </div>
+                <p className="text-slate-500 text-sm italic mt-6">Working with heart, creating with mind.</p>
+              </div>
+              <div className="justify-self-center">
+                <div className="w-40 h-52 sm:w-48 sm:h-64 rounded-xl overflow-hidden border border-white/10">
+                  <img src={PROFILE_IMG} alt="Khaidar Sinaan As-Shidqii" className="w-full h-full object-cover object-top" />
+                </div>
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>
