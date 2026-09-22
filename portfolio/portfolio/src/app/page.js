@@ -434,18 +434,6 @@ const PROJECTS = [
     repo: "",
   },
 ];
-const PROJECTS = [
-  {
-    title: "Dare Coffee — Cafe Website",
-    badge: "First Project",
-    desc: "My first web project: a cafe website built with Laravel. It has a landing page, a promo banner, and a menu of coffee and non-coffee drinks with price and stock info, plus login and register pages for customers.",
-    tags: ["Laravel", "PHP", "MySQL", "Blade"],
-    images: ["/projects/dare-coffee-home.jpeg", "/projects/dare-coffee-menu.jpeg"],
-    live: "",   // isi kalau sudah di-hosting, kosongkan kalau belum
-    repo: "",   // isi link repo GitHub project ini
-  },
-];
-
 function ProjectCard({ p, i }) {
   const [active, setActive] = useState(0);
 
