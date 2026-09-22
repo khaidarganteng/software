@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -409,6 +409,31 @@ function TechStack() {
 
 /* ---------------- Projects ---------------- */
 /* ---------------- Projects ---------------- */
+const PROJECTS = [
+  {
+    title: "Dare Coffee — Cafe Website",
+    badge: "First Project",
+    desc: "My first web project: a cafe website built with Laravel. It has a landing page, a promo banner, and a menu of coffee and non-coffee drinks with price and stock info, plus login and register pages for customers.",
+    tags: ["Laravel", "PHP", "MySQL", "Blade"],
+    images: ["/projects/dare-coffee-home.jpeg", "/projects/dare-coffee-menu.jpeg"],
+    live: "",
+    repo: "",
+  },
+  {
+    title: "Creative Fest — Design Competition Platform",
+    badge: "Second Project",
+    desc: "A design-competition platform built for SMKN 1 Wonosobo's Creative Fest. It has a public landing page with categories and a work gallery, a registration/login system for participants, an admin dashboard to manage events and participants, and a separate judge dashboard for scoring submitted work.",
+    tags: ["Laravel", "PHP", "MySQL", "Blade"],
+    images: [
+      "/projects/creative-fest-hero.jpeg",
+      "/projects/creative-fest-register.jpeg",
+      "/projects/creative-fest-admin.jpeg",
+      "/projects/creative-fest-juri.jpeg",
+    ],
+    live: "",
+    repo: "",
+  },
+];
 const PROJECTS = [
   {
     title: "Dare Coffee — Cafe Website",
